@@ -29,7 +29,7 @@ Most ping tools either show a number that slowly drifts away from reality, or on
 
 | | |
 |---|---|
-| 🔓 **Open source: nothing hidden** | A tool that reads your network traffic should never be a black box. Every line of AionPingMeter is public. You can see exactly what it does, check that it sends nothing anywhere, and build it yourself. The whole program is one readable file, [`Program.cs`](Program.cs). |
+| 🔓 **Open source: nothing hidden** | A tool that reads your network traffic should never be a black box. Every line of AionPingMeter is public. You can see exactly what it does, check that it sends nothing anywhere, and build it yourself. The code is in [`src/`](src): a few short, readable files (start with [`src/main.rs`](src/main.rs)). |
 | 🎯 **Measured the way the game measures it** | AionPingMeter reads the game's own ping exchange with the server, the same one the client uses internally. You see the latency the game really has, not a guess based on some other connection. |
 | ⏱️ **One clock, zero drift** | Send and receive times come from the same hardware timer the game itself uses. Windows clock corrections, time sync and long sessions can't add a hidden +100 ms that never goes away. The number is as true after 8 hours as after 8 seconds. |
 | 🔍 **Tells you *where* the lag is** | Every spike is broken down into **PC → network → server**, so you know whether to blame your Wi-Fi, your provider, or the game. |
@@ -101,25 +101,19 @@ Your current ping and network stay visible the whole time.
 
 ## Installation
 
-### Which file should I download?
+### Download
 
-Every [release](../../releases/latest) comes in two versions. Both work exactly the same way:
-
-| File | Size | Who it's for |
-|---|---|---|
-| **`AionPingMeter-vX.Y.Z-standalone.zip`** | tens of MB | 👍 **Recommended. Not sure? Take this one.** Everything is built in, nothing else to install. |
-| **`AionPingMeter-vX.Y.Z-light.zip`** | ~0.2 MB | Tiny version for users who already have the [.NET 8 Desktop Runtime (x64)](https://dotnet.microsoft.com/download/dotnet/8.0). Without it, the app won't start. |
+Every [release](../../releases/latest) is a single archive, **`AionPingMeter-vX.Y.Z.zip`** (under 1 MB) with one `AionPingMeter.exe` inside. Nothing else to install except Npcap.
 
 ### Requirements
 
 - Windows 10 / 11 (64-bit)
-- [**Npcap**](https://npcap.com/#download) (free), needed by **both** versions. If you already use another network-based meter, you probably have it.
+- [**Npcap**](https://npcap.com/#download) (free), required. If you already use another network-based meter, you probably have it.
   During setup, keep **"Restrict Npcap driver's access to Administrators only"** *unchecked*.
-- [**.NET 8 Desktop Runtime**](https://dotnet.microsoft.com/download/dotnet/8.0) (x64): **light version only**.
 
 ### Run
 
-1. Download the archive you picked from the [latest release](../../releases/latest).
+1. Download the archive from the [latest release](../../releases/latest).
 2. Unzip it into any folder, for example `C:\Games\AionPingMeter`.
 3. Start `AionPingMeter.exe`. Admin rights are not required.
 4. Launch Aion 2. The overlay fills in automatically within ~10 seconds of entering the world.
@@ -143,6 +137,7 @@ Right-click the AionPingMeter icon next to the clock. If you don't see it, check
 | **Move** / **Lock position** | Unlock the overlay, drag it anywhere, then lock it again. The position is remembered. |
 | **Reset position** | Puts the overlay back in the top-left corner of the main screen. |
 | **Write log** | Saves every measurement to a CSV file (see below). |
+| **Open log** | Shown while the log is on: opens the CSV file's folder in Explorer. |
 | **Alert threshold** | The ping that always raises an alert: 80 / 100 / 150 / 200 / 300 ms. Sudden jumps are flagged regardless. |
 | **Exit** | Closes AionPingMeter. |
 
@@ -203,15 +198,15 @@ Players are often served by different gateways. Compare the **Server** address i
 
 ## Building from source
 
-You need the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
+You need [Rust](https://rustup.rs) (stable, MSVC toolchain).
 
 ```
 git clone <this repository>
 cd AionPingMeter
-dotnet build -c Release -o out
+cargo build --release
 ```
 
-The app ends up in `out\AionPingMeter.exe`. The whole program is a single file, [`Program.cs`](Program.cs).
+The app ends up in `target\release\AionPingMeter.exe`.
 
 ## License
 
