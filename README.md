@@ -103,7 +103,7 @@ Your current ping and network stay visible the whole time.
 
 ### Download
 
-Every [release](../../releases/latest) is a single archive, **`AionPingMeter-vX.Y.Z.zip`** (under 1 MB) with one `AionPingMeter.exe` inside. Nothing else to install except Npcap.
+Every [release](../../releases/latest) is one file, **`AionPingMeter.exe`** (under 1 MB). No archive to unpack and nothing else to install except Npcap.
 
 ### Requirements
 
@@ -113,14 +113,14 @@ Every [release](../../releases/latest) is a single archive, **`AionPingMeter-vX.
 
 ### Run
 
-1. Download the archive from the [latest release](../../releases/latest).
-2. Unzip it into any folder, for example `C:\Games\AionPingMeter`.
+1. Download [`AionPingMeter.exe`](../../releases/latest/download/AionPingMeter.exe) from the latest release.
+2. Put it in any folder, for example `C:\Games\AionPingMeter`.
 3. Start `AionPingMeter.exe`. Admin rights are not required.
 4. Launch Aion 2. The overlay fills in automatically within ~10 seconds of entering the world.
 
 > Windows SmartScreen may warn about an unknown publisher, because the app isn't code-signed. Click **More info → Run anyway**.
 
-**Updating:** close AionPingMeter from the tray, unzip the new version over the old one, and start it again. Your settings are kept.
+**Updating:** close AionPingMeter from the tray, replace `AionPingMeter.exe` with the new one, and start it again. Your settings are kept.
 
 **Uninstalling:** delete the folder, and optionally `%APPDATA%\AionPingMeter` (settings and logs).
 

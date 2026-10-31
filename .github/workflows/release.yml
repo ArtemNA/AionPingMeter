@@ -34,13 +34,12 @@ jobs:
         shell: pwsh
         run: |
           $tag = "${{ github.ref_name }}"
-          New-Item -ItemType Directory out | Out-Null
-          Copy-Item target/release/AionPingMeter.exe, README.md, LICENSE out
-          $zip = "AionPingMeter-$tag.zip"
-          Compress-Archive -Path "out/*" -DestinationPath $zip
-          $mb = (Get-Item $zip).Length / 1MB
+          # The release ships the exe itself, under a fixed name (releases/latest/download/AionPingMeter.exe).
+          $exe = "AionPingMeter.exe"
+          Copy-Item target/release/$exe $exe
+          $mb = (Get-Item $exe).Length / 1MB
           $size = [string]::Format([cultureinfo]::InvariantCulture, "{0:0.0} MB", $mb)
-          "$((Get-FileHash $zip -Algorithm SHA256).Hash.ToLower())  $zip" | Out-File -Encoding ascii SHA256SUMS.txt
+          "$((Get-FileHash $exe -Algorithm SHA256).Hash.ToLower())  $exe" | Out-File -Encoding ascii SHA256SUMS.txt
 
           # Release notes: download guide in three languages + this version's CHANGELOG section
           $changelog = Get-Content CHANGELOG.md -Raw
@@ -56,5 +55,5 @@ jobs:
           name: AionPingMeter ${{ github.ref_name }}
           body_path: release-notes.md
           files: |
-            AionPingMeter-${{ github.ref_name }}.zip
+            AionPingMeter.exe
             SHA256SUMS.txt

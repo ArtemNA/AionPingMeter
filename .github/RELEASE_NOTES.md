@@ -1,24 +1,24 @@
 ## ⬇ Download
 
-**AionPingMeter-{{TAG}}.zip** ({{SIZE}}): a single `AionPingMeter.exe`, nothing else to install except [**Npcap**](https://npcap.com/#download) (free). During Npcap setup, keep *"Restrict Npcap driver's access to Administrators only"* **unchecked**.
+**AionPingMeter.exe** ({{SIZE}}): the whole app in one file, nothing else to install except [**Npcap**](https://npcap.com/#download) (free). During Npcap setup, keep *"Restrict Npcap driver's access to Administrators only"* **unchecked**.
 
-Unzip the archive anywhere and run `AionPingMeter.exe`. If Windows SmartScreen warns you, click **More info → Run anyway**.
+Put `AionPingMeter.exe` in any folder and run it. If Windows SmartScreen warns you, click **More info → Run anyway**.
 
 <details>
 <summary>🇺🇦 <b>Українська</b></summary>
 
-**AionPingMeter-{{TAG}}.zip** ({{SIZE}}): один файл `AionPingMeter.exe`, додатково потрібен лише [**Npcap**](https://npcap.com/#download) (безкоштовний). Під час його встановлення **не став** галочку *«Restrict Npcap driver's access to Administrators only»*.
+**AionPingMeter.exe** ({{SIZE}}): уся програма в одному файлі, додатково потрібен лише [**Npcap**](https://npcap.com/#download) (безкоштовний). Під час його встановлення **не став** галочку *«Restrict Npcap driver's access to Administrators only»*.
 
-Розпакуй архів у будь-яку папку й запусти `AionPingMeter.exe`. Якщо Windows SmartScreen попереджає, натисни **Докладніше → Виконати однаково**.
+Поклади `AionPingMeter.exe` у будь-яку папку й запусти. Якщо Windows SmartScreen попереджає, натисни **Докладніше → Виконати однаково**.
 
 </details>
 
 <details>
 <summary>🇷🇺 <b>Русский</b></summary>
 
-**AionPingMeter-{{TAG}}.zip** ({{SIZE}}): один файл `AionPingMeter.exe`, дополнительно нужен только [**Npcap**](https://npcap.com/#download) (бесплатный). При его установке **не ставь** галочку *«Restrict Npcap driver's access to Administrators only»*.
+**AionPingMeter.exe** ({{SIZE}}): вся программа в одном файле, дополнительно нужен только [**Npcap**](https://npcap.com/#download) (бесплатный). При его установке **не ставь** галочку *«Restrict Npcap driver's access to Administrators only»*.
 
-Распакуй архив в любую папку и запусти `AionPingMeter.exe`. Если Windows SmartScreen предупреждает, нажми **Подробнее → Выполнить в любом случае**.
+Положи `AionPingMeter.exe` в любую папку и запусти. Если Windows SmartScreen предупреждает, нажми **Подробнее → Выполнить в любом случае**.
 
 </details>
 
@@ -28,4 +28,4 @@ Unzip the archive anywhere and run `AionPingMeter.exe`. If Windows SmartScreen w
 
 {{CHANGES}}
 
-`SHA256SUMS.txt` contains the archive's checksum.
+`SHA256SUMS.txt` contains the checksum of `AionPingMeter.exe`.
