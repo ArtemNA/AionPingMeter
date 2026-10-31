@@ -26,7 +26,7 @@ jobs:
           # The exe's version comes from the tag.
           $version = "${{ github.ref_name }}".TrimStart("v")
           $toml = Get-Content Cargo.toml -Raw
-          $toml = [regex]::Replace($toml, '(?m)^version = ".*?"', "version = `"$version`"", 1)
+          $toml = ([regex]'(?m)^version = ".*?"').Replace($toml, "version = `"$version`"", 1)   # first match = [package]
           Set-Content Cargo.toml $toml -NoNewline
           cargo build --release
 
